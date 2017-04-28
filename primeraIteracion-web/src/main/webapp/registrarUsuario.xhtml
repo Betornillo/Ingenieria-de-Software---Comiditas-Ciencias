@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+  <h:head>
+    <title>Registro de usuario</title>
+    
+  </h:head>
+  <h:body>
+    <p:growl id="messages" showDetail="true" />
+
+    
+    <b:navBar brand="Comiditas Ciencias" brandHref="principalS.xhtml" inverse="true" fixed="top">
+
+              <!--<b:navbarLinks>
+                  <b:navLink value="Registrar" href="registrarUsuario.xhtml"></b:navLink>
+              </b:navbarLinks>-->
+              <h:form styleClass="navbar-form navbar-right">
+                  <div class="form-group">
+                      <b:inputText placeholder="Email" fieldSize="sm"/>
+                      <!--input type="text" class="form-control" placeholder="Search"/-->
+                  </div>
+                  <div class="form-group">
+                      <b:inputSecret placeholder="Password" fieldSize="sm"/>
+                  </div>
+                  #{' '}
+                  <b:commandButton action="a" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
+              </h:form>
+      </b:navBar>
+     
+      <br/>
+      <br/>
+      <br/>
+
+    
+    <h:form id="myForm">
+      <table>
+
+
+        <tr>
+          <td>Nombre</td>
+          <td><p:inputText value="#{registraUsuarioBean.userBean.nombre}" required="true" id="Nombre"/></td>
+        </tr>
+
+        <tr>
+          <td>Apellido paterno</td>
+          <td><p:inputText value="#{registraUsuarioBean.userBean.app}" required="true" id="app"/></td>
+        </tr>
+
+        <tr>
+          <td>Apellido materno</td>
+          <td><p:inputText value="#{registraUsuarioBean.userBean.apm}" required="true" id="apm"/></td>
+        </tr>
+
+        <tr>
+          <td>Correo</td>
+          <td><p:inputText value="#{registraUsuarioBean.userBean.correo}" required="true"  id="correo"/></td>
+        </tr>
+
+        <tr>
+          <td>Contraseña</td>
+          <td><p:password  value="#{registraUsuarioBean.userBean.contrasena}" required="true"  id="contraseña"/></td>
+        </tr>
+
+        <tr>
+          <td>Confirmacion contraseña</td>
+          <td><p:password  value="#{registraUsuarioBean.conContrasena}" required="true"  id="ccontraseña"/></td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <p:commandButton action="#{registraUsuarioBean.addUsuario}" value="Agregar Usuario"/>
+            <p:commandButton value="Limpiar" update="myForm" process="@this"  >
+              <p:resetInput target="myForm" />
+            </p:commandButton>
+          </td>
+        </tr>
+
+      </table>
+      <table>
+        <tr>
+          <td><p:messages id="messages" autoUpdate="true" closable="true" /></td>
+        </tr>
+      </table>
+    </h:form>
+
+  </h:body>
+
+  
+</html>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+  <h:head>
+    <title>Principal</title>
+  </h:head>
+
+
+  <h:body>
+      
+      
+      <b:navBar brand="Comiditas Ciencias" brandHref="principalS" inverse="true" fixed="top">
+
+              <b:navbarLinks>
+                  <b:navLink value="Registrar" href="registrarUsuario.xhtml"></b:navLink>
+              </b:navbarLinks>
+              <h:form styleClass="navbar-form navbar-right">
+                  <div class="form-group">
+                      <b:inputText placeholder="Email" fieldSize="sm" id="txtUsuario" required="true" 
+                      value="#{login.usuario}"/>
+                      
+                  </div>
+                  <div class="form-group">
+                      <b:inputSecret placeholder="Password" fieldSize="sm" id="txtClave" required="true" 
+                      value="#{login.password}"/>
+                  </div>
+                  
+                  <b:commandButton value="Iniciar sesión" icon="chevron-right" iconAlign="right" action="#{login.login}" >
+                  <f:param name="correC" value="#{login.usuario}">
+                  </f:param></b:commandButton>
+
+                  
+              </h:form>
+      </b:navBar>
+      <br/>
+      <br/>
+      <br/>
+      
+
+      <b:carousel id="tiovivo" style="width:800px" interval="2500">
+        
+        <b:carouselItem >
+          
+          <p:link outcome="listaPuestoS" >
+            <f:param name="id" value="1">
+              <img src="imagenes/p1.jpg"  alt="Valladolid" style="width: 800px; height: 600px"/> 
+            </f:param>
+          </p:link>
+          
+          <b:carouselCaption>
+            <h3>Zona de alimentos 1</h3>
+            <p>Hermoso lugar para comer donde se encuentran se puede disfrutar de una gran variedad de alimentos y 
+            bebidas.</p>
+          </b:carouselCaption>
+        </b:carouselItem>
+        
+        <b:carouselItem>
+           
+          <p:link outcome="listaPuestoS">
+            <f:param name="id" value="2">
+            <img src="imagenes/p2.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+            </f:param>
+          </p:link>
+
+          <b:carouselCaption>
+          <h3>Zona de alimentos 2</h3>
+          <p>Hermoso lugar para comer donde se encuentran se puede disfrutar de una gran variedad de alimentos y 
+          bebidas.</p>
+          </b:carouselCaption>
+        </b:carouselItem>
+   
+        <b:carouselItem>
+          
+          <p:link outcome="listaPuestoS">
+            <f:param name="id" value="3">  
+            <img src="imagenes/p3.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+            </f:param>
+          </p:link>
+
+          <b:carouselCaption>
+          <h3>Zona de alimentos 3</h3>
+          <p>Hermoso lugar para comer donde se encuentran se puede disfrutar de una gran variedad de alimentos y 
+          bebidas.</p>
+          </b:carouselCaption>
+        </b:carouselItem>
+        
+        <b:carouselItem>
+          
+          <p:link outcome="listaPuestoS">
+            <f:param name="id" value="4">
+            <img src="imagenes/p4.jpg" alt="Valladolid" style="width: 800px; height: 600px" />
+            </f:param>
+          </p:link>
+
+          <b:carouselCaption>
+          <h3>Zona de alimentos 4</h3>
+          <p>Hermoso lugar para comer donde se encuentran se puede disfrutar de una gran variedad de alimentos y 
+          bebidas.</p>
+          </b:carouselCaption>
+        </b:carouselItem>
+     
+      </b:carousel>
+
+  </h:body>
+
+  
+</html>
